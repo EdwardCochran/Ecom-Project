@@ -46,16 +46,18 @@ const [products] = useState([
 
   return (
     <>
-      <h1>Hey from App Componet</h1>
+      <h1>The Apple Stop</h1>
+      <div className='product-list'>
   {
       products.map((product, id) => (
-        <div key={id}>
+        <div key={id}className='product-item'>
           <h3>{product.Name}</h3>
           <p>Price: ${product.Price}</p>
           <p>{product.Description}</p>
         </div>
       ))
     }
+      </div>
     </>
   )
 }
