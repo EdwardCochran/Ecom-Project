@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-const [produtcts] = useState([
+const [products] = useState([
 {
   id: 1,
   Name: 'Macbook Pro',
@@ -47,6 +47,15 @@ const [produtcts] = useState([
   return (
     <>
       <h1>Hey from App Componet</h1>
+  {
+      products.map((product, id) => (
+        <div key={id}>
+          <h3>{product.Name}</h3>
+          <p>Price: ${product.Price}</p>
+          <p>{product.Description}</p>
+        </div>
+      ))
+    }
     </>
   )
 }
