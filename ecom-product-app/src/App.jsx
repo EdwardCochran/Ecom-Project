@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ProductList from './components/ProductList'
 import './App.css'
 
 function App() {
@@ -28,7 +29,7 @@ const [products] = useState([
   Name: 'Airpods Pro',
   Price: 249,
   Description: 'Immerse yourself in rich, high-quality sound with AirPods Pro.',
-  Image: 'https://via.placeholder.com/150'
+  Image: 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-2-hero-select-202409?wid=976&hei=916&fmt=jpeg&qlt=90&.v=1724041669458'
 },{
   id: 5,
   Name: 'Apple Watch Ultra', 
@@ -47,17 +48,7 @@ const [products] = useState([
   return (
     <>
       <h1>The Apple Stop</h1>
-      <div className='product-list'>
-  {
-      products.map((product, id) => (
-        <div key={id}className='product-item'>
-          <h3>{product.Name}</h3>
-          <p>Price: ${product.Price}</p>
-          <p>{product.Description}</p>
-        </div>
-      ))
-    }
-      </div>
+      <ProductList allProducts={products}/>
     </>
   )
 }
